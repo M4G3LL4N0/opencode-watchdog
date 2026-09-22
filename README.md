@@ -1,121 +1,128 @@
 # OpenCode Watchdog
 
-A local watchdog + circuit breaker that keeps OpenCode Desktop / CLI sessions
-from degenerating into repetition loops, silent stalls, or tap-looped tool
-calls — and stops them (or recovers) when they do.
+A local circuit breaker for runaway OpenCode sessions.
 
-Pure local tooling (TypeScript, Node 22, zero runtime deps). It talks to *your*
-OpenCode server over the SSE feed it already exposes — no server-side
-instrumentation, no proxies, no paid models required.
+Built by Noaerth.
 
-Status: **PASS** — 22 simulated scenarios (9 positive + 13 negative), 66 unit
-tests, mock-server integration tests, and a live smoke against the *real*
-`opencode serve` binary all pass. See `docs/PART1.md` and `docs/PART2.md` for
-the full, truthful build reports.
+OpenCode Watchdog is an independent community project by Noaerth. It is not affiliated with, endorsed by, or maintained by the OpenCode team.
 
-## Install
+## The problem
 
-```sh
-pnpm --ignore-workspace --dir . install
-pnpm --ignore-workspace --dir . run build
-ocw install          # symlink `ocw` onto ~/.local/bin (off PATH) and add to shell rc
+Models occasionally enter runaway repetition:
+
+```
+递归递归递归递递归...
 ```
 
-Requires a Node 22 binary (`bin/ocw.js` runs directly, no external deps).
-The OpenCode binary is discovered from `~/.opencode/bin/opencode`, then `PATH`.
+OpenCode Watchdog notices the repetition and safely interrupts the affected session.
 
-## Quick start
+## 60-second quickstart
 
-```sh
-ocw start            # 1. adopt a healthy server you already run, else spawn the shared
-                     #    server on the configured port (127.0.0.1:4096 by default)
-ocw attach           # 2. connect your terminal to the shared server (token_delta feed)
+```bash
+# Install from GitHub (npm package planned)
+git clone https://github.com/noaerth/opencode-watchdog.git
+cd opencode-watchdog
+pnpm install
+pnpm run build
+
+# Start the watchdog (adopts or spawns the OpenCode server)
+./bin/ocw.js start
+
+# Then connect your Desktop or CLI to the watchdog's OpenCode server
+# (see `ocw desktop` and `ocw cli` for details)
 ```
 
-Everything else is opt-in:
+## What it catches
 
-| command | description |
-| --- | --- |
-| `ocw start` | adopt a healthy server, or spawn the shared one; writes `managed.json` |
-| `ocw stop`  | stop **only** a server *we spawned* (never an adopted/external one) |
-| `ocw status` | server/session health, circuit state, incidents, recommended feed |
-| `ocw doctor` | capability probe + config/installation check |
-| `ocw mode` / `ocw doctor` | switch `observe \| protect \| recover` |
-| `ocw watch` (aliases `ocw start`) | watch-only after `opencode serve` is already running |
-| `ocw incidents` | list/mark incidents (incl. `mark <id> false-positive`) |
-| `ocw sessions` | per-session circuit/incident state, `reset <id>`, `detail <id>` |
-| `ocw stats` / `ocw status --json` | incident + trip + recovery counters |
-| `ocw simulate` | run the built-in fixtures through the engine (deterministic) |
-| `ocw doctor install` | setup line for adding `ocw` to your shell |
+- repeated-token generation
+- repeated sentence/narration loops
+- repeated tools with no progress
+- no-progress activity
 
-Run `ocw --help` for the full list.
+## What it does
 
-Protection is **opt-in and off by default** (`mode=observe`). Until you run
-`ocw mode protect` (or `ocw start --mode protect`) the watchdog only logs
-findings — it never aborts a session on its own. In `protect`/`recover` mode it
-aborts only the single degenerate session (never healthy peers), opens a
-per-session circuit after two trips (cooldown-gated), and on `ocw mode recover`
-additionally re-prompts the affected session once with a bounded recovery
-instruction.
+Normal:
+OpenCode → model → progress
 
-## Behavior
+Broken:
+OpenCode → model degenerates → watchdog detects → affected session aborts → files remain
 
-- **No supervision paid**: watchdog never issues a model call by itself in any
-  mode; it only reads the server feed and, in protect/recover, calls the server's
-  native `abort`/`prompt_async` endpoints.
-- **Safe stop**: `ocw stop` kills only servers recorded as `source=spawned` and
-  with a matching pid. Adopted/external servers are never killed, and `ocw stop`
-  refuses when the managed entry is adopted.
-- **Auth-aware**: when `OPENCODE_SERVER_USERNAME/PASSWORD` are set, every
-  watchdog HTTP probe, ingest, and control call authenticates; credentials are
-  read from env and never logged.
-- **State isolation**: the watchdog keeps its own dirs under `XDG_CONFIG_HOME`
-  and `XDG_STATE_HOME`; you can override with `OCW_CONFIG` / `OCW_STATE_DIR`
-  (see `src/util/paths.ts`).
+## Modes
+
+- **Observe**: Log incidents, take no action (default, safe for evaluation)
+- **Protect**: Abort affected session on detection (recommended for protection)
+- **Recover**: Abort then send a recovery prompt (experimental, bounded)
+
+## Why it's safe
+
+- No model used for detection (purely local, deterministic)
+- Local-only execution (no network calls except to your OpenCode server)
+- Bounded buffers and per-session isolation
+- No Git reset/revert or filesystem rollback
+- Does not kill Desktop or unrelated sessions
+- Conservative false-positive strategy (requires corroboration)
+
+## Verification
+
+- **70/70 unit tests** passing
+- **22/22 simulate fixtures** passing (9 positive + 13 negative)
+- Build and typecheck: clean (strict TypeScript)
+- Live smoke tested against real `opencode serve` 1.18.30 (adopt/spawn/stop/refusal, status/doctor/sessions/mode/incidents)
 
 ## Architecture
 
 ```
-src/
-  server/manager.ts        shared-server manager: adopt / spawn / stop / effective endpoint
-  core/policy/breaker.ts   per-session circuit breaker (cooldown-gated trips, open on 2nd)
-  core/control/reset.ts    queued-session reset (control file) + readEffectiveEndpoint
-  core/events/             normalized WatchdogEvent host model
-  core/runtime/            WatchdogRuntime, SessionScope, transport + capability probing
-  core/detectors/          duplicate_sentence / short_pattern / punctuation / tool loop / stall
-  core/incidents/          incident log, feedback (false-positive marking)
-  adapters/opencode/       OcHttpClient (auth, SSE token_delta/part_update/poll), probeCapabilities
-  cli/                     ocw commands + passthrough `ocw cli`/`ocw run`
-  simulate.ts              fixture runner (deterministic, observe-safe)
-fixtures/*.jsonl           22 scenarios (9P+13N)
-tests/*.test.ts            70 unit + integration tests
+Desktop / CLI
+    ↓ (SSE feed)
+OpenCode Server
+    ↓
+Watchdog Observer
+    ↓
+Detector Pipeline (short_pattern, duplicate_sentence, etc.)
+    ↓
+Policy Engine (corroboration threshold)
+    ↓
+Session Abort (POST /session/{id}/abort) or Recovery Prompt
 ```
 
-## Tests
+## Advanced usage
 
-```sh
-pnpm --ignore-workspace --dir . run build     # tsc (strict)
-pnpm --ignore-workspace --dir . run test      # node --test dist/tests/**/*.test.js
-node bin/ocw.js simulate                       # fixture suite (no network)
+See `ocw --help` for the full command list:
+
+```
+ocw start [--mode observe|protect|recover]   Start (or adopt) the shared OpenCode server and watch all sessions
+ocw desktop [--mode ...]                     Same as start, then print Desktop connection instructions
+ocw cli                                      Connect your terminal CLI to the running shared server
+ocw run [args...]                            Pass-through to 'opencode run' attached to the shared server
+ocw watch                                    Watch an already-running OpenCode server (no server management)
+ocw stop                                     Stop a server this watchdog started (never external servers)
+ocw status                                    Show watchdog + server + per-session circuit state
+ocw doctor                                    Run capability probes and report health
+ocw incidents [--json]                       Show the incident log
+ocw incidents mark <id> false-positive       Tag an incident as a false positive
+ocw stats                                    Report session + incident summary
+ocw sessions [--json]                        List server sessions with circuit state
+ocw mode [observe|protect|recover]           Show or set the action mode (observe-first onboarding)
+ocw session reset <sessionID>                Reset watchdog state for a session (breaker + recovery + detectors)
+ocw config                                    Show effective configuration
+ocw config set <key> <value>                 Persist a configuration value
+ocw simulate [fixture...] [--mode M] [--pace MS]  Run fixture scenarios through the detector engine
+ocw install [--prefix DIR]                   Symlink the ocw launcher into a bin dir (~/.local/bin)
 ```
 
-The fixture suite ships with a `_expect` header per scenario so a regression
-misclassification shows up as a failed row with the expected vs actual detector.
-Run `node bin/ocw.js simulate` for the summary table.
+## Privacy
 
-## Known limitations / next steps (from Part 2)
+- All processing is local to your machine.
+- Credentials (if set) are read from environment and never logged.
+- No data is sent to external services.
 
-- Live `ocw start` was smoke-tested against the real `opencode serve` binary on
-  an isolated state/port; the manager, adopt/spawn/stop decisions, status/doctor/
-  sessions/incidents, and `ocw simulate` all returned correct results.
-- The mode-gate (`mode protect`), circuit open + `sessions reset`, and
-  false-positive marking are covered by fixtures + unit/integration tests, and
-  were exercised live via `ocw mode` and `ocw incidents mark`.
-- Not yet demonstrated: triggering a real incident against a **loaded** live
-  OpenCode session (the watchdog aborts only real degenerate output; fixtures +
-  mock-server evidence stands in). Proceed with `ocw start` + `ocw watch` in
-  observe mode first.
+## Contributing
 
-See `docs/PART1.md` (detectors/ingest) and `docs/PART2.md` (manager, breaker,
-reset control, ingest dedup/classification, CLI smoke, fixtures) for the full
-reports.
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## License
+
+[MIT](LICENSE) © 2026 Noaerth
+
+Built by Noaerth.
+
