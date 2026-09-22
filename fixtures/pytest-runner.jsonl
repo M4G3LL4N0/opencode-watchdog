@@ -1,0 +1,24 @@
+{"_expect":{"detect":false}}
+{"_at":0,"kind":"sessionCreated","sessionID":"ses_sim"}
+{"_at":0,"kind":"sessionBusy","sessionID":"ses_sim"}
+{"_at":0,"kind":"toolCallStarted","callID":"call_pytest","tool":"bash","input":{"command":"pytest -q"},"sessionID":"ses_sim"}
+{"_at":100,"kind":"toolOutputObserved","callID":"call_pytest","tool":"bash","outcomeText":"tests/test_api.py ...F","sessionID":"ses_sim"}
+{"_at":350,"kind":"toolOutputObserved","callID":"call_pytest","tool":"bash","outcomeText":"tests/test_cache.py ....","sessionID":"ses_sim"}
+{"_at":600,"kind":"toolOutputObserved","callID":"call_pytest","tool":"bash","outcomeText":"tests/test_auth.py ....","sessionID":"ses_sim"}
+{"_at":850,"kind":"toolOutputObserved","callID":"call_pytest","tool":"bash","outcomeText":"tests/test_io.py ...F","sessionID":"ses_sim"}
+{"_at":1100,"kind":"toolOutputObserved","callID":"call_pytest","tool":"bash","outcomeText":"tests/test_retry.py ....","sessionID":"ses_sim"}
+{"_at":1350,"kind":"toolOutputObserved","callID":"call_pytest","tool":"bash","outcomeText":"tests/test_api.py ....","sessionID":"ses_sim"}
+{"_at":1600,"kind":"toolOutputObserved","callID":"call_pytest","tool":"bash","outcomeText":"tests/test_cache.py ...F","sessionID":"ses_sim"}
+{"_at":1850,"kind":"toolOutputObserved","callID":"call_pytest","tool":"bash","outcomeText":"tests/test_auth.py ....","sessionID":"ses_sim"}
+{"_at":2100,"kind":"toolOutputObserved","callID":"call_pytest","tool":"bash","outcomeText":"tests/test_io.py ....","sessionID":"ses_sim"}
+{"_at":2350,"kind":"toolOutputObserved","callID":"call_pytest","tool":"bash","outcomeText":"tests/test_retry.py ...F","sessionID":"ses_sim"}
+{"_at":2600,"kind":"toolOutputObserved","callID":"call_pytest","tool":"bash","outcomeText":"tests/test_api.py ....","sessionID":"ses_sim"}
+{"_at":2850,"kind":"toolOutputObserved","callID":"call_pytest","tool":"bash","outcomeText":"tests/test_cache.py ....","sessionID":"ses_sim"}
+{"_at":3100,"kind":"toolOutputObserved","callID":"call_pytest","tool":"bash","outcomeText":"tests/test_auth.py ...F","sessionID":"ses_sim"}
+{"_at":3350,"kind":"toolOutputObserved","callID":"call_pytest","tool":"bash","outcomeText":"tests/test_io.py ....","sessionID":"ses_sim"}
+{"_at":3600,"kind":"toolOutputObserved","callID":"call_pytest","tool":"bash","outcomeText":"tests/test_retry.py ....","sessionID":"ses_sim"}
+{"_at":4100,"kind":"toolOutputObserved","callID":"call_pytest","tool":"bash","outcomeText":"1 failed, 14 passed in 3.42s","sessionID":"ses_sim"}
+{"_at":4300,"kind":"toolCallFinished","callID":"call_pytest","tool":"bash","outcome":"error","sessionID":"ses_sim"}
+{"_at":4500,"kind":"assistantTextDelta","delta":"Assertion in the retry test fails on the third attempt. ","sessionID":"ses_sim"}
+{"_at":4800,"kind":"assistantTextDelta","delta":"Tracking down the exponential backoff logic. ","sessionID":"ses_sim"}
+{"_at":5000,"kind":"progressObserved","marker":"step.start","sessionID":"ses_sim"}

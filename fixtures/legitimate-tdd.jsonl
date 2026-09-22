@@ -1,0 +1,16 @@
+{"_expect": {"detect": false}}
+{"_at": 0, "kind": "sessionCreated", "sessionID": "ses_sim"}
+{"_at": 0, "kind": "sessionBusy", "sessionID": "ses_sim"}
+{"_at": 0, "kind": "assistantTextDelta", "delta": "I'll grep the repo for usage.", "sessionID": "ses_sim"}
+{"_at": 500, "kind": "toolCallStarted", "callID": "call_1", "tool": "grep", "input": {"pattern": "usage", "path": "."}, "sessionID": "ses_sim"}
+{"_at": 500, "kind": "toolOutputObserved", "callID": "call_1", "tool": "grep", "outcomeText": "usage in src/a.ts:1\nusage in src/b.ts:3\nusage in src/c.ts:9\nusage in src/d.ts:12\nusage in src/e.ts:14\nusage in src/f.ts:17\nusage in src/g.ts:20", "sessionID": "ses_sim"}
+{"_at": 600, "kind": "toolCallFinished", "callID": "call_1", "tool": "grep", "outcome": "success", "sessionID": "ses_sim"}
+{"_at": 700, "kind": "assistantTextDelta", "delta": "Found several call sites.", "sessionID": "ses_sim"}
+{"_at": 900, "kind": "toolCallStarted", "callID": "call_2", "tool": "grep", "input": {"pattern": "reference_to", "path": "."}, "sessionID": "ses_sim"}
+{"_at": 900, "kind": "toolOutputObserved", "callID": "call_2", "tool": "grep", "outcomeText": "usage in src/a.ts:1\nusage in src/b.ts:3\nusage in src/c.ts:9\nusage in src/d.ts:12\nusage in src/e.ts:14\nusage in src/f.ts:17\nusage in src/g.ts:20", "sessionID": "ses_sim"}
+{"_at": 1000, "kind": "toolCallFinished", "callID": "call_2", "tool": "grep", "outcome": "success", "sessionID": "ses_sim"}
+{"_at": 1100, "kind": "assistantTextDelta", "delta": "Now editing the loader.", "sessionID": "ses_sim"}
+{"_at": 1300, "kind": "toolCallStarted", "callID": "call_3", "tool": "edit", "input": {"filePath": "src/loader.ts", "text": "// rewritten"}, "sessionID": "ses_sim"}
+{"_at": 1400, "kind": "fileChangeObserved", "path": "src/loader.ts", "sessionID": "ses_sim"}
+{"_at": 1400, "kind": "toolCallFinished", "callID": "call_3", "tool": "edit", "outcome": "success", "sessionID": "ses_sim"}
+{"_at": 1500, "kind": "sessionIdle", "sessionID": "ses_sim"}

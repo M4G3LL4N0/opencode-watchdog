@@ -1,0 +1,23 @@
+{
+  "name": "opencode-watchdog",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local watchdog / circuit breaker protecting OpenCode sessions from model degeneration",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "ocw": "./bin/ocw.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --test 'dist/tests/**/*.test.js'"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.0"
+  }
+}

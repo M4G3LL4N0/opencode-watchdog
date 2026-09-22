@@ -1,0 +1,9 @@
+{"_expect":{"detect":false}}
+{"_at":0,"kind":"sessionCreated","sessionID":"ses_sim"}
+{"_at":0,"kind":"sessionBusy","sessionID":"ses_sim"}
+{"_at":0,"kind":"assistantTextDelta","delta":"An illustration uses repeated letters like: ","sessionID":"ses_sim"}
+{"_at":300,"kind":"assistantTextDelta","delta":"abc abc abc abc abc abc abc abc abc abc","sessionID":"ses_sim"}
+{"_at":600,"kind":"assistantTextDelta","delta":"That is exactly ten repetitions, well within normal bounds. ","sessionID":"ses_sim"}
+{"_at":900,"kind":"assistantTextDelta","delta":"And briefly: ok ok ok ok ok. ","sessionID":"ses_sim"}
+{"_at":1200,"kind":"assistantTextDelta","delta":"All within limits. ","sessionID":"ses_sim"}
+{"_at":1500,"kind":"progressObserved","marker":"text.ended","sessionID":"ses_sim"}

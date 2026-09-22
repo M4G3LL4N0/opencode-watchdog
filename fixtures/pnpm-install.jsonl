@@ -1,0 +1,22 @@
+{"_expect":{"detect":false}}
+{"_at":0,"kind":"sessionCreated","sessionID":"ses_sim"}
+{"_at":0,"kind":"sessionBusy","sessionID":"ses_sim"}
+{"_at":0,"kind":"progressObserved","marker":"step.start","sessionID":"ses_sim"}
+{"_at":100,"kind":"toolCallStarted","callID":"call_install","tool":"bash","input":{"command":"pnpm install --frozen-lockfile"},"sessionID":"ses_sim"}
+{"_at":200,"kind":"toolOutputObserved","callID":"call_install","tool":"bash","outcomeText":"Progress: resolved 1 ██ fetched 12.0 kB · downloading typescript@5.5.0","sessionID":"ses_sim"}
+{"_at":600,"kind":"toolOutputObserved","callID":"call_install","tool":"bash","outcomeText":"Progress: resolved 2 ░░ fetched 24.0 kB · downloading @types/node@22.0.0","sessionID":"ses_sim"}
+{"_at":1000,"kind":"toolOutputObserved","callID":"call_install","tool":"bash","outcomeText":"Progress: resolved 3 ░░ fetched 36.0 kB · downloading jiti@1.21.0","sessionID":"ses_sim"}
+{"_at":1400,"kind":"toolOutputObserved","callID":"call_install","tool":"bash","outcomeText":"Progress: resolved 4 ██ fetched 48.0 kB · downloading typescript@5.5.2","sessionID":"ses_sim"}
+{"_at":1800,"kind":"toolOutputObserved","callID":"call_install","tool":"bash","outcomeText":"Progress: resolved 5 ░░ fetched 60.0 kB · downloading typescript@5.5.0","sessionID":"ses_sim"}
+{"_at":2200,"kind":"toolOutputObserved","callID":"call_install","tool":"bash","outcomeText":"Progress: resolved 6 ░░ fetched 72.0 kB · downloading @types/node@22.0.0","sessionID":"ses_sim"}
+{"_at":2600,"kind":"toolOutputObserved","callID":"call_install","tool":"bash","outcomeText":"Progress: resolved 7 ██ fetched 84.0 kB · downloading jiti@1.21.0","sessionID":"ses_sim"}
+{"_at":3000,"kind":"toolOutputObserved","callID":"call_install","tool":"bash","outcomeText":"Progress: resolved 8 ░░ fetched 96.0 kB · downloading typescript@5.5.2","sessionID":"ses_sim"}
+{"_at":3400,"kind":"toolOutputObserved","callID":"call_install","tool":"bash","outcomeText":"Progress: resolved 9 ░░ fetched 108.0 kB · downloading typescript@5.5.0","sessionID":"ses_sim"}
+{"_at":3800,"kind":"toolOutputObserved","callID":"call_install","tool":"bash","outcomeText":"Progress: resolved 10 ██ fetched 120.0 kB · downloading @types/node@22.0.0","sessionID":"ses_sim"}
+{"_at":4200,"kind":"toolOutputObserved","callID":"call_install","tool":"bash","outcomeText":"Progress: resolved 11 ░░ fetched 132.0 kB · downloading jiti@1.21.0","sessionID":"ses_sim"}
+{"_at":4600,"kind":"toolOutputObserved","callID":"call_install","tool":"bash","outcomeText":"Progress: resolved 12 ░░ fetched 144.0 kB · downloading typescript@5.5.2","sessionID":"ses_sim"}
+{"_at":5600,"kind":"toolOutputObserved","callID":"call_install","tool":"bash","outcomeText":"packages +0  files +0  binaries +0  deps +0","sessionID":"ses_sim"}
+{"_at":5900,"kind":"toolCallFinished","callID":"call_install","tool":"bash","outcome":"success","sessionID":"ses_sim"}
+{"_at":6000,"kind":"progressObserved","marker":"step.end","sessionID":"ses_sim"}
+{"_at":6200,"kind":"assistantTextDelta","delta":"Dependencies installed cleanly. ","sessionID":"ses_sim"}
+{"_at":6500,"kind":"assistantTextDelta","delta":"Ready to run the test suite. ","sessionID":"ses_sim"}

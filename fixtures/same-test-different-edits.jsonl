@@ -1,0 +1,24 @@
+{"_expect":{"detect":false}}
+{"_at":0,"kind":"sessionCreated","sessionID":"ses_sim"}
+{"_at":0,"kind":"sessionBusy","sessionID":"ses_sim"}
+{"_at":0,"kind":"assistantTextDelta","delta":"Fixing issue #1: typo. ","sessionID":"ses_sim"}
+{"_at":500,"kind":"fileChangeObserved","path":"src/issue1.ts","sessionID":"ses_sim"}
+{"_at":900,"kind":"toolCallStarted","callID":"call_t0","tool":"bash","input":{"command":"pnpm test"},"sessionID":"ses_sim"}
+{"_at":1600,"kind":"toolOutputObserved","callID":"call_t0","tool":"bash","outcomeText":"3 passing, 0 failing","sessionID":"ses_sim"}
+{"_at":1700,"kind":"toolCallFinished","callID":"call_t0","tool":"bash","outcome":"success","sessionID":"ses_sim"}
+{"_at":12000,"kind":"assistantTextDelta","delta":"Fixing issue #2: timeout. ","sessionID":"ses_sim"}
+{"_at":12500,"kind":"fileChangeObserved","path":"src/issue2.ts","sessionID":"ses_sim"}
+{"_at":12900,"kind":"toolCallStarted","callID":"call_t1","tool":"bash","input":{"command":"pnpm test"},"sessionID":"ses_sim"}
+{"_at":13600,"kind":"toolOutputObserved","callID":"call_t1","tool":"bash","outcomeText":"2 passing, 0 failing","sessionID":"ses_sim"}
+{"_at":13700,"kind":"toolCallFinished","callID":"call_t1","tool":"bash","outcome":"success","sessionID":"ses_sim"}
+{"_at":24000,"kind":"assistantTextDelta","delta":"Fixing issue #3: buffer. ","sessionID":"ses_sim"}
+{"_at":24500,"kind":"fileChangeObserved","path":"src/issue3.ts","sessionID":"ses_sim"}
+{"_at":24900,"kind":"toolCallStarted","callID":"call_t2","tool":"bash","input":{"command":"pnpm test"},"sessionID":"ses_sim"}
+{"_at":25600,"kind":"toolOutputObserved","callID":"call_t2","tool":"bash","outcomeText":"5 passing, 0 failing","sessionID":"ses_sim"}
+{"_at":25700,"kind":"toolCallFinished","callID":"call_t2","tool":"bash","outcome":"success","sessionID":"ses_sim"}
+{"_at":36000,"kind":"assistantTextDelta","delta":"Fixing issue #4: race. ","sessionID":"ses_sim"}
+{"_at":36500,"kind":"fileChangeObserved","path":"src/issue4.ts","sessionID":"ses_sim"}
+{"_at":36900,"kind":"toolCallStarted","callID":"call_t3","tool":"bash","input":{"command":"pnpm test"},"sessionID":"ses_sim"}
+{"_at":37600,"kind":"toolOutputObserved","callID":"call_t3","tool":"bash","outcomeText":"4 passing, 0 failing","sessionID":"ses_sim"}
+{"_at":37700,"kind":"toolCallFinished","callID":"call_t3","tool":"bash","outcome":"success","sessionID":"ses_sim"}
+{"_at":50000,"kind":"progressObserved","marker":"step.end","sessionID":"ses_sim"}

@@ -1,0 +1,28 @@
+{"_expect": {"detect": true, "detector": "short_pattern"}}
+{"_at": 0, "type": "server.connected", "properties": {}}
+{"_at": 0, "type": "session.status", "properties": {"sessionID": "ses_raw", "status": {"type": "busy"}}}
+{"_at": 100, "type": "message.part.delta", "properties": {"sessionID": "ses_raw", "messageID": "msg_1", "partID": "prt_1", "field": "text", "delta": "递归"}}
+{"_at": 400, "type": "message.part.delta", "properties": {"sessionID": "ses_raw", "messageID": "msg_1", "partID": "prt_1", "field": "text", "delta": "递归"}}
+{"_at": 700, "type": "message.part.delta", "properties": {"sessionID": "ses_raw", "messageID": "msg_1", "partID": "prt_1", "field": "text", "delta": "递归"}}
+{"_at": 1000, "type": "message.part.delta", "properties": {"sessionID": "ses_raw", "messageID": "msg_1", "partID": "prt_1", "field": "text", "delta": "递归"}}
+{"_at": 1300, "type": "message.part.delta", "properties": {"sessionID": "ses_raw", "messageID": "msg_1", "partID": "prt_1", "field": "text", "delta": "递归"}}
+{"_at": 1600, "type": "message.part.delta", "properties": {"sessionID": "ses_raw", "messageID": "msg_1", "partID": "prt_1", "field": "text", "delta": "递归"}}
+{"_at": 1900, "type": "message.part.delta", "properties": {"sessionID": "ses_raw", "messageID": "msg_1", "partID": "prt_1", "field": "text", "delta": "递归"}}
+{"_at": 2200, "type": "message.part.delta", "properties": {"sessionID": "ses_raw", "messageID": "msg_1", "partID": "prt_1", "field": "text", "delta": "递归"}}
+{"_at": 2500, "type": "message.part.delta", "properties": {"sessionID": "ses_raw", "messageID": "msg_1", "partID": "prt_1", "field": "text", "delta": "递归"}}
+{"_at": 2800, "type": "message.part.delta", "properties": {"sessionID": "ses_raw", "messageID": "msg_1", "partID": "prt_1", "field": "text", "delta": "递归"}}
+{"_at": 3100, "type": "message.part.delta", "properties": {"sessionID": "ses_raw", "messageID": "msg_1", "partID": "prt_1", "field": "text", "delta": "递归"}}
+{"_at": 3400, "type": "message.part.delta", "properties": {"sessionID": "ses_raw", "messageID": "msg_1", "partID": "prt_1", "field": "text", "delta": "递归"}}
+{"_at": 3700, "type": "message.part.delta", "properties": {"sessionID": "ses_raw", "messageID": "msg_1", "partID": "prt_1", "field": "text", "delta": "递归"}}
+{"_at": 4000, "type": "message.part.delta", "properties": {"sessionID": "ses_raw", "messageID": "msg_1", "partID": "prt_1", "field": "text", "delta": "递归"}}
+{"_at": 4300, "type": "message.part.delta", "properties": {"sessionID": "ses_raw", "messageID": "msg_1", "partID": "prt_1", "field": "text", "delta": "递归"}}
+{"_at": 4600, "type": "message.part.delta", "properties": {"sessionID": "ses_raw", "messageID": "msg_1", "partID": "prt_1", "field": "text", "delta": "递归"}}
+{"_at": 4900, "type": "message.part.delta", "properties": {"sessionID": "ses_raw", "messageID": "msg_1", "partID": "prt_1", "field": "text", "delta": "递归"}}
+{"_at": 5200, "type": "message.part.delta", "properties": {"sessionID": "ses_raw", "messageID": "msg_1", "partID": "prt_1", "field": "text", "delta": "递归"}}
+{"_at": 5500, "type": "message.part.delta", "properties": {"sessionID": "ses_raw", "messageID": "msg_1", "partID": "prt_1", "field": "text", "delta": "递归"}}
+{"_at": 5800, "type": "message.part.delta", "properties": {"sessionID": "ses_raw", "messageID": "msg_1", "partID": "prt_1", "field": "text", "delta": "递归"}}
+{"_at": 6100, "type": "message.part.delta", "properties": {"sessionID": "ses_raw", "messageID": "msg_1", "partID": "prt_1", "field": "text", "delta": "递归"}}
+{"_at": 6400, "type": "message.part.delta", "properties": {"sessionID": "ses_raw", "messageID": "msg_1", "partID": "prt_1", "field": "text", "delta": "递归"}}
+{"_at": 6700, "type": "message.part.delta", "properties": {"sessionID": "ses_raw", "messageID": "msg_1", "partID": "prt_1", "field": "text", "delta": "递归"}}
+{"_at": 7000, "type": "message.part.delta", "properties": {"sessionID": "ses_raw", "messageID": "msg_1", "partID": "prt_1", "field": "text", "delta": "递归"}}
+{"_at": 7300, "type": "session.status", "properties": {"sessionID": "ses_raw", "status": {"type": "idle"}}}

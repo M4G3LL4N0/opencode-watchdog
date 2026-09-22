@@ -1,0 +1,15 @@
+{"_expect": {"detect": true, "detector": "duplicate_sentence"}}
+{"_at": 0, "kind": "sessionCreated", "sessionID": "ses_sim"}
+{"_at": 0, "kind": "sessionBusy", "sessionID": "ses_sim"}
+{"_at": 0, "kind": "assistantTextDelta", "delta": "Checking the deployed version.", "sessionID": "ses_sim"}
+{"_at": 600, "kind": "toolCallStarted", "callID": "call_a", "tool": "bash", "input": {"command": "git status --porcelain"}, "sessionID": "ses_sim"}
+{"_at": 700, "kind": "toolCallFinished", "callID": "call_a", "tool": "bash", "outcome": "success", "sessionID": "ses_sim"}
+{"_at": 1400, "kind": "toolCallStarted", "callID": "call_b", "tool": "bash", "input": {"command": "git status --porcelain"}, "sessionID": "ses_sim"}
+{"_at": 1500, "kind": "toolCallFinished", "callID": "call_b", "tool": "bash", "outcome": "success", "sessionID": "ses_sim"}
+{"_at": 2200, "kind": "toolCallStarted", "callID": "call_c", "tool": "bash", "input": {"command": "git status --porcelain"}, "sessionID": "ses_sim"}
+{"_at": 2300, "kind": "toolCallFinished", "callID": "call_c", "tool": "bash", "outcome": "success", "sessionID": "ses_sim"}
+{"_at": 3000, "kind": "toolCallStarted", "callID": "call_d", "tool": "bash", "input": {"command": "git status --porcelain"}, "sessionID": "ses_sim"}
+{"_at": 3100, "kind": "toolCallFinished", "callID": "call_d", "tool": "bash", "outcome": "success", "sessionID": "ses_sim"}
+{"_at": 3800, "kind": "assistantTextDelta", "delta": "Still checking the deployed version.", "sessionID": "ses_sim"}
+{"_at": 3800, "kind": "assistantTextSnapshot", "text": "Still checking the deployed version. Still checking the deployed version. Still checking the deployed version. Still checking the deployed version. Still checking the deployed version. Still checking the deployed version.", "sessionID": "ses_sim"}
+{"_at": 3900, "kind": "sessionIdle", "sessionID": "ses_sim"}

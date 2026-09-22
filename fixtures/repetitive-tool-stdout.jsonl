@@ -1,0 +1,15 @@
+{"_expect": {"detect": false}}
+{"_at": 0, "kind": "sessionCreated", "sessionID": "ses_sim"}
+{"_at": 0, "kind": "sessionBusy", "sessionID": "ses_sim"}
+{"_at": 0, "kind": "assistantTextDelta", "delta": "Running the test blowup script.", "sessionID": "ses_sim"}
+{"_at": 500, "kind": "toolCallStarted", "callID": "call_1", "tool": "bash", "input": {"command": "node scripts/blowup.mjs"}, "sessionID": "ses_sim"}
+{"_at": 800, "kind": "toolOutputObserved", "callID": "call_1", "tool": "bash", "outcomeText": "0.1 s\ntrace busy\nallocation trace   0 ms\nalloc 42\nallocation sites 17\n", "sessionID": "ses_sim"}
+{"_at": 900, "kind": "toolOutputObserved", "callID": "call_1", "tool": "bash", "outcomeText": "0.1 s\ntrace busy\nallocation trace   0 ms\nalloc 42\nallocation sites 17\n", "sessionID": "ses_sim"}
+{"_at": 1000, "kind": "toolOutputObserved", "callID": "call_1", "tool": "bash", "outcomeText": "0.1 s\ntrace busy\nallocation trace   0 ms\nalloc 42\nallocation sites 17\n", "sessionID": "ses_sim"}
+{"_at": 1100, "kind": "toolOutputObserved", "callID": "call_1", "tool": "bash", "outcomeText": "0.1 s\ntrace busy\nallocation trace   0 ms\nalloc 42\nallocation sites 17\n", "sessionID": "ses_sim"}
+{"_at": 1200, "kind": "toolOutputObserved", "callID": "call_1", "tool": "bash", "outcomeText": "0.1 s\ntrace busy\nallocation trace   0 ms\nalloc 42\nallocation sites 17\n", "sessionID": "ses_sim"}
+{"_at": 1300, "kind": "toolOutputObserved", "callID": "call_1", "tool": "bash", "outcomeText": "0.1 s\ntrace busy\nallocation trace   0 ms\nalloc 42\nallocation sites 17\n", "sessionID": "ses_sim"}
+{"_at": 1400, "kind": "toolOutputObserved", "callID": "call_1", "tool": "bash", "outcomeText": "0.1 s\ntrace busy\nallocation trace   0 ms\nalloc 42\nallocation sites 17\n", "sessionID": "ses_sim"}
+{"_at": 2000, "kind": "toolCallFinished", "callID": "call_1", "tool": "bash", "outcome": "success", "sessionID": "ses_sim"}
+{"_at": 2100, "kind": "assistantTextDelta", "delta": "The blowup output repeats but that is normal for this tool.", "sessionID": "ses_sim"}
+{"_at": 3000, "kind": "sessionIdle", "sessionID": "ses_sim"}

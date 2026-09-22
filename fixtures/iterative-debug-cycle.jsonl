@@ -1,0 +1,23 @@
+{"_expect":{"detect":false}}
+{"_at":0,"kind":"sessionCreated","sessionID":"ses_sim"}
+{"_at":0,"kind":"sessionBusy","sessionID":"ses_sim"}
+{"_at":0,"kind":"assistantTextDelta","delta":"Traceback points at the session store. ","sessionID":"ses_sim"}
+{"_at":300,"kind":"assistantTextDelta","delta":"The store is returning an empty list for new keys. ","sessionID":"ses_sim"}
+{"_at":600,"kind":"assistantTextDelta","delta":"Inspect the merge function. ","sessionID":"ses_sim"}
+{"_at":900,"kind":"assistantTextDelta","delta":"The merge drops rows when both inputs are identical. ","sessionID":"ses_sim"}
+{"_at":1200,"kind":"fileChangeObserved","path":"src/store.ts","sessionID":"ses_sim"}
+{"_at":1500,"kind":"toolCallStarted","callID":"call_a","tool":"bash","input":{"command":"node --test store"},"sessionID":"ses_sim"}
+{"_at":2000,"kind":"toolOutputObserved","callID":"call_a","tool":"bash","outcomeText":"2 passing, 0 failing","sessionID":"ses_sim"}
+{"_at":2100,"kind":"toolCallFinished","callID":"call_a","tool":"bash","outcome":"success","sessionID":"ses_sim"}
+{"_at":2400,"kind":"assistantTextDelta","delta":"Confirmed fix. Moving on to the export path. ","sessionID":"ses_sim"}
+{"_at":2700,"kind":"assistantTextDelta","delta":"Export writes schemas then rows. ","sessionID":"ses_sim"}
+{"_at":3000,"kind":"assistantTextDelta","delta":"Schema row malformed for nested types. ","sessionID":"ses_sim"}
+{"_at":3400,"kind":"fileChangeObserved","path":"src/export.ts","sessionID":"ses_sim"}
+{"_at":3700,"kind":"progressObserved","marker":"step.start","sessionID":"ses_sim"}
+{"_at":4000,"kind":"progressObserved","marker":"step.end","sessionID":"ses_sim"}
+{"_at":4200,"kind":"assistantTextDelta","delta":"Nested types serialize correctly now. ","sessionID":"ses_sim"}
+{"_at":4500,"kind":"assistantTextDelta","delta":"Run the full suite. ","sessionID":"ses_sim"}
+{"_at":4800,"kind":"toolCallStarted","callID":"call_b","tool":"bash","input":{"command":"pnpm test"},"sessionID":"ses_sim"}
+{"_at":5200,"kind":"toolOutputObserved","callID":"call_b","tool":"bash","outcomeText":"all green","sessionID":"ses_sim"}
+{"_at":5300,"kind":"toolCallFinished","callID":"call_b","tool":"bash","outcome":"success","sessionID":"ses_sim"}
+{"_at":5600,"kind":"progressObserved","marker":"text.ended","sessionID":"ses_sim"}

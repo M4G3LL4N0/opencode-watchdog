@@ -1,0 +1,9 @@
+{"_expect":{"detect":false}}
+{"_at":0,"kind":"sessionCreated","sessionID":"ses_sim"}
+{"_at":0,"kind":"sessionBusy","sessionID":"ses_sim"}
+{"_at":0,"kind":"assistantTextDelta","delta":"先检查了配置文件的加载顺序，发现默认值覆盖的顺序反了。","sessionID":"ses_sim"}
+{"_at":1500,"kind":"assistantTextDelta","delta":"修正后重新读取环境变量，确认端口与主机都来自环境。","sessionID":"ses_sim"}
+{"_at":3000,"kind":"assistantTextDelta","delta":"接着验证了健康检查的返回值，服务端返回了预期的版本号。","sessionID":"ses_sim"}
+{"_at":4500,"kind":"assistantTextDelta","delta":"再看消息轮询的批次大小，当前限制在八个会话以内。","sessionID":"ses_sim"}
+{"_at":6000,"kind":"assistantTextDelta","delta":"最后跑了一遍回归测试，全部通过，没有任何退化。","sessionID":"ses_sim"}
+{"_at":7500,"kind":"progressObserved","marker":"text.ended","sessionID":"ses_sim"}

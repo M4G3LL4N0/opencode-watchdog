@@ -1,0 +1,24 @@
+{"_expect": {"detect": true, "detector": "short_pattern"}}
+{"_at": 0, "kind": "sessionCreated", "sessionID": "ses_sim"}
+{"_at": 0, "kind": "sessionBusy", "sessionID": "ses_sim"}
+{"_at": 0, "kind": "assistantTextDelta", "delta": "递归", "sessionID": "ses_sim"}
+{"_at": 300, "kind": "assistantTextDelta", "delta": "递归", "sessionID": "ses_sim"}
+{"_at": 600, "kind": "assistantTextDelta", "delta": "递归", "sessionID": "ses_sim"}
+{"_at": 900, "kind": "assistantTextDelta", "delta": "递归", "sessionID": "ses_sim"}
+{"_at": 1200, "kind": "assistantTextDelta", "delta": "递归", "sessionID": "ses_sim"}
+{"_at": 1500, "kind": "assistantTextDelta", "delta": "递归", "sessionID": "ses_sim"}
+{"_at": 1800, "kind": "assistantTextDelta", "delta": "递归", "sessionID": "ses_sim"}
+{"_at": 2100, "kind": "assistantTextDelta", "delta": "递归", "sessionID": "ses_sim"}
+{"_at": 2400, "kind": "assistantTextDelta", "delta": "递归", "sessionID": "ses_sim"}
+{"_at": 2700, "kind": "assistantTextDelta", "delta": "递归", "sessionID": "ses_sim"}
+{"_at": 3000, "kind": "assistantTextDelta", "delta": "递归", "sessionID": "ses_sim"}
+{"_at": 3300, "kind": "assistantTextDelta", "delta": "递归", "sessionID": "ses_sim"}
+{"_at": 3600, "kind": "assistantTextDelta", "delta": "递归", "sessionID": "ses_sim"}
+{"_at": 3900, "kind": "assistantTextDelta", "delta": "递归", "sessionID": "ses_sim"}
+{"_at": 4200, "kind": "assistantTextDelta", "delta": "递归", "sessionID": "ses_sim"}
+{"_at": 4500, "kind": "assistantTextDelta", "delta": "递归", "sessionID": "ses_sim"}
+{"_at": 4800, "kind": "assistantTextDelta", "delta": "递归", "sessionID": "ses_sim"}
+{"_at": 5100, "kind": "assistantTextDelta", "delta": "递归", "sessionID": "ses_sim"}
+{"_at": 5400, "kind": "assistantTextDelta", "delta": "递归", "sessionID": "ses_sim"}
+{"_at": 5700, "kind": "assistantTextDelta", "delta": "递归", "sessionID": "ses_sim"}
+{"_at": 6000, "kind": "sessionIdle", "sessionID": "ses_sim"}

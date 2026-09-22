@@ -1,0 +1,21 @@
+{"_expect":{"detect":false}}
+{"_at":0,"kind":"sessionCreated","sessionID":"ses_sim"}
+{"_at":0,"kind":"sessionBusy","sessionID":"ses_sim"}
+{"_at":0,"kind":"toolCallStarted","callID":"call_grep","tool":"bash","input":{"command":"grep -rn 'TODO' src"},"sessionID":"ses_sim"}
+{"_at":80,"kind":"toolOutputObserved","callID":"call_grep","tool":"bash","outcomeText":"src/feature0.ts:1:  // TODO: handle the retry in auth","sessionID":"ses_sim"}
+{"_at":430,"kind":"toolOutputObserved","callID":"call_grep","tool":"bash","outcomeText":"src/feature1.ts:2:  // TODO: replace the mock in billing","sessionID":"ses_sim"}
+{"_at":780,"kind":"toolOutputObserved","callID":"call_grep","tool":"bash","outcomeText":"src/feature2.ts:3:  // TODO: add timeouts in crypto","sessionID":"ses_sim"}
+{"_at":1130,"kind":"toolOutputObserved","callID":"call_grep","tool":"bash","outcomeText":"src/feature3.ts:4:  // TODO: merge branches in sync","sessionID":"ses_sim"}
+{"_at":1480,"kind":"toolOutputObserved","callID":"call_grep","tool":"bash","outcomeText":"src/feature4.ts:5:  // TODO: simplify in ops","sessionID":"ses_sim"}
+{"_at":1830,"kind":"toolOutputObserved","callID":"call_grep","tool":"bash","outcomeText":"src/feature5.ts:6:  // TODO: handle the retry in auth","sessionID":"ses_sim"}
+{"_at":2180,"kind":"toolOutputObserved","callID":"call_grep","tool":"bash","outcomeText":"src/feature6.ts:7:  // TODO: replace the mock in billing","sessionID":"ses_sim"}
+{"_at":2530,"kind":"toolOutputObserved","callID":"call_grep","tool":"bash","outcomeText":"src/feature7.ts:8:  // TODO: add timeouts in crypto","sessionID":"ses_sim"}
+{"_at":2880,"kind":"toolOutputObserved","callID":"call_grep","tool":"bash","outcomeText":"src/feature8.ts:9:  // TODO: merge branches in sync","sessionID":"ses_sim"}
+{"_at":3230,"kind":"toolOutputObserved","callID":"call_grep","tool":"bash","outcomeText":"src/feature9.ts:10:  // TODO: simplify in ops","sessionID":"ses_sim"}
+{"_at":3580,"kind":"toolOutputObserved","callID":"call_grep","tool":"bash","outcomeText":"src/feature10.ts:11:  // TODO: handle the retry in auth","sessionID":"ses_sim"}
+{"_at":3930,"kind":"toolOutputObserved","callID":"call_grep","tool":"bash","outcomeText":"src/feature11.ts:12:  // TODO: replace the mock in billing","sessionID":"ses_sim"}
+{"_at":4280,"kind":"toolOutputObserved","callID":"call_grep","tool":"bash","outcomeText":"src/feature12.ts:13:  // TODO: add timeouts in crypto","sessionID":"ses_sim"}
+{"_at":4630,"kind":"toolOutputObserved","callID":"call_grep","tool":"bash","outcomeText":"src/feature13.ts:14:  // TODO: merge branches in sync","sessionID":"ses_sim"}
+{"_at":5400,"kind":"toolCallFinished","callID":"call_grep","tool":"bash","outcome":"success","sessionID":"ses_sim"}
+{"_at":5600,"kind":"assistantTextDelta","delta":"Fourteen TODO sites. Picking the billing ones first. ","sessionID":"ses_sim"}
+{"_at":5900,"kind":"assistantTextDelta","delta":"Started on the sync retry cleanup. ","sessionID":"ses_sim"}

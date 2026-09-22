@@ -1,0 +1,30 @@
+{"_expect":{"detect":false}}
+{"_at":0,"kind":"sessionCreated","sessionID":"ses_sim"}
+{"_at":0,"kind":"sessionBusy","sessionID":"ses_sim"}
+{"_at":0,"kind":"toolCallStarted","callID":"call_deploy","tool":"bash","input":{"command":"deploy --verbose"},"sessionID":"ses_sim"}
+{"_at":3000,"kind":"toolOutputObserved","callID":"call_deploy","tool":"bash","outcomeText":"stage 1/10 build: ok","sessionID":"ses_sim"}
+{"_at":3500,"kind":"progressObserved","marker":"step.progress","sessionID":"ses_sim"}
+{"_at":23000,"kind":"toolOutputObserved","callID":"call_deploy","tool":"bash","outcomeText":"stage 2/10 test: ok","sessionID":"ses_sim"}
+{"_at":23500,"kind":"progressObserved","marker":"step.progress","sessionID":"ses_sim"}
+{"_at":43000,"kind":"toolOutputObserved","callID":"call_deploy","tool":"bash","outcomeText":"stage 3/10 image: warning","sessionID":"ses_sim"}
+{"_at":43500,"kind":"progressObserved","marker":"step.progress","sessionID":"ses_sim"}
+{"_at":63000,"kind":"toolOutputObserved","callID":"call_deploy","tool":"bash","outcomeText":"stage 4/10 push: ok","sessionID":"ses_sim"}
+{"_at":63500,"kind":"progressObserved","marker":"step.progress","sessionID":"ses_sim"}
+{"_at":83000,"kind":"toolOutputObserved","callID":"call_deploy","tool":"bash","outcomeText":"stage 5/10 rollout: ok","sessionID":"ses_sim"}
+{"_at":83500,"kind":"progressObserved","marker":"step.progress","sessionID":"ses_sim"}
+{"_at":103000,"kind":"toolOutputObserved","callID":"call_deploy","tool":"bash","outcomeText":"stage 6/10 build: ok","sessionID":"ses_sim"}
+{"_at":103500,"kind":"progressObserved","marker":"step.progress","sessionID":"ses_sim"}
+{"_at":123000,"kind":"toolOutputObserved","callID":"call_deploy","tool":"bash","outcomeText":"stage 7/10 test: warning","sessionID":"ses_sim"}
+{"_at":123500,"kind":"progressObserved","marker":"step.progress","sessionID":"ses_sim"}
+{"_at":143000,"kind":"toolOutputObserved","callID":"call_deploy","tool":"bash","outcomeText":"stage 8/10 image: ok","sessionID":"ses_sim"}
+{"_at":143500,"kind":"progressObserved","marker":"step.progress","sessionID":"ses_sim"}
+{"_at":163000,"kind":"toolOutputObserved","callID":"call_deploy","tool":"bash","outcomeText":"stage 9/10 push: ok","sessionID":"ses_sim"}
+{"_at":163500,"kind":"progressObserved","marker":"step.progress","sessionID":"ses_sim"}
+{"_at":183000,"kind":"toolOutputObserved","callID":"call_deploy","tool":"bash","outcomeText":"stage 10/10 rollout: ok","sessionID":"ses_sim"}
+{"_at":183500,"kind":"progressObserved","marker":"step.progress","sessionID":"ses_sim"}
+{"_at":208000,"kind":"toolCallFinished","callID":"call_deploy","tool":"bash","outcome":"success","sessionID":"ses_sim"}
+{"_at":210000,"kind":"assistantTextDelta","delta":"Deployment reached the rollout stage. ","sessionID":"ses_sim"}
+{"_at":210300,"kind":"assistantTextDelta","delta":"Fetching status. ","sessionID":"ses_sim"}
+{"_at":210600,"kind":"toolCallStarted","callID":"call_s","tool":"bash","input":{"command":"kubectl get pods"},"sessionID":"ses_sim"}
+{"_at":211100,"kind":"toolOutputObserved","callID":"call_s","tool":"bash","outcomeText":"api-7d8-86445 1/1 Running","sessionID":"ses_sim"}
+{"_at":211200,"kind":"toolCallFinished","callID":"call_s","tool":"bash","outcome":"success","sessionID":"ses_sim"}

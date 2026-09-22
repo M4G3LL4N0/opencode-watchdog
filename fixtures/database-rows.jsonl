@@ -1,0 +1,19 @@
+{"_expect":{"detect":false}}
+{"_at":0,"kind":"sessionCreated","sessionID":"ses_sim"}
+{"_at":0,"kind":"sessionBusy","sessionID":"ses_sim"}
+{"_at":0,"kind":"toolCallStarted","callID":"call_db","tool":"bash","input":{"command":"gh api /orgs/acme/members"},"sessionID":"ses_sim"}
+{"_at":100,"kind":"toolOutputObserved","callID":"call_db","tool":"bash","outcomeText":"{\"id\": 1000, \"login\": \"alice0\"}","sessionID":"ses_sim"}
+{"_at":380,"kind":"toolOutputObserved","callID":"call_db","tool":"bash","outcomeText":"{\"id\": 1001, \"login\": \"bob2\"}","sessionID":"ses_sim"}
+{"_at":660,"kind":"toolOutputObserved","callID":"call_db","tool":"bash","outcomeText":"{\"id\": 1002, \"login\": \"carol2\"}","sessionID":"ses_sim"}
+{"_at":940,"kind":"toolOutputObserved","callID":"call_db","tool":"bash","outcomeText":"{\"id\": 1003, \"login\": \"dave4\"}","sessionID":"ses_sim"}
+{"_at":1220,"kind":"toolOutputObserved","callID":"call_db","tool":"bash","outcomeText":"{\"id\": 1004, \"login\": \"erin4\"}","sessionID":"ses_sim"}
+{"_at":1500,"kind":"toolOutputObserved","callID":"call_db","tool":"bash","outcomeText":"{\"id\": 1005, \"login\": \"alice6\"}","sessionID":"ses_sim"}
+{"_at":1780,"kind":"toolOutputObserved","callID":"call_db","tool":"bash","outcomeText":"{\"id\": 1006, \"login\": \"bob6\"}","sessionID":"ses_sim"}
+{"_at":2060,"kind":"toolOutputObserved","callID":"call_db","tool":"bash","outcomeText":"{\"id\": 1007, \"login\": \"carol8\"}","sessionID":"ses_sim"}
+{"_at":2340,"kind":"toolOutputObserved","callID":"call_db","tool":"bash","outcomeText":"{\"id\": 1008, \"login\": \"dave8\"}","sessionID":"ses_sim"}
+{"_at":2620,"kind":"toolOutputObserved","callID":"call_db","tool":"bash","outcomeText":"{\"id\": 1009, \"login\": \"erin10\"}","sessionID":"ses_sim"}
+{"_at":2900,"kind":"toolOutputObserved","callID":"call_db","tool":"bash","outcomeText":"{\"id\": 1010, \"login\": \"alice10\"}","sessionID":"ses_sim"}
+{"_at":3180,"kind":"toolOutputObserved","callID":"call_db","tool":"bash","outcomeText":"{\"id\": 1011, \"login\": \"bob12\"}","sessionID":"ses_sim"}
+{"_at":4000,"kind":"toolCallFinished","callID":"call_db","tool":"bash","outcome":"success","sessionID":"ses_sim"}
+{"_at":4100,"kind":"assistantTextDelta","delta":"Twelve members in the org. ","sessionID":"ses_sim"}
+{"_at":4400,"kind":"assistantTextDelta","delta":"Found the admin team I need to contact. ","sessionID":"ses_sim"}

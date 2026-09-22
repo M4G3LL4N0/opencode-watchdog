@@ -1,0 +1,19 @@
+{"_expect":{"detect":false}}
+{"_at":0,"kind":"sessionCreated","sessionID":"ses_sim"}
+{"_at":0,"kind":"sessionBusy","sessionID":"ses_sim"}
+{"_at":0,"kind":"toolCallStarted","callID":"call_up","tool":"bash","input":{"command":"upgrade"},"sessionID":"ses_sim"}
+{"_at":150,"kind":"toolOutputObserved","callID":"call_up","tool":"bash","outcomeText":"[1/12] Downloading manifest 8%","sessionID":"ses_sim"}
+{"_at":450,"kind":"toolOutputObserved","callID":"call_up","tool":"bash","outcomeText":"[2/12] Extracting tarball 16%","sessionID":"ses_sim"}
+{"_at":750,"kind":"toolOutputObserved","callID":"call_up","tool":"bash","outcomeText":"[3/12] Running migrations 24%","sessionID":"ses_sim"}
+{"_at":1050,"kind":"toolOutputObserved","callID":"call_up","tool":"bash","outcomeText":"[4/12] Compiling vendored libs 32%","sessionID":"ses_sim"}
+{"_at":1350,"kind":"toolOutputObserved","callID":"call_up","tool":"bash","outcomeText":"[5/12] Downloading manifest 40%","sessionID":"ses_sim"}
+{"_at":1650,"kind":"toolOutputObserved","callID":"call_up","tool":"bash","outcomeText":"[6/12] Extracting tarball 48%","sessionID":"ses_sim"}
+{"_at":1950,"kind":"toolOutputObserved","callID":"call_up","tool":"bash","outcomeText":"[7/12] Running migrations 56%","sessionID":"ses_sim"}
+{"_at":2250,"kind":"toolOutputObserved","callID":"call_up","tool":"bash","outcomeText":"[8/12] Compiling vendored libs 64%","sessionID":"ses_sim"}
+{"_at":2550,"kind":"toolOutputObserved","callID":"call_up","tool":"bash","outcomeText":"[9/12] Downloading manifest 72%","sessionID":"ses_sim"}
+{"_at":2850,"kind":"toolOutputObserved","callID":"call_up","tool":"bash","outcomeText":"[10/12] Extracting tarball 80%","sessionID":"ses_sim"}
+{"_at":3150,"kind":"toolOutputObserved","callID":"call_up","tool":"bash","outcomeText":"[11/12] Running migrations 88%","sessionID":"ses_sim"}
+{"_at":3450,"kind":"toolOutputObserved","callID":"call_up","tool":"bash","outcomeText":"[12/12] Compiling vendored libs 96%","sessionID":"ses_sim"}
+{"_at":4200,"kind":"toolCallFinished","callID":"call_up","tool":"bash","outcome":"success","sessionID":"ses_sim"}
+{"_at":4400,"kind":"assistantTextDelta","delta":"Upgrade finished. ","sessionID":"ses_sim"}
+{"_at":4700,"kind":"assistantTextDelta","delta":"Time to verify nothing regressed in the CLI. ","sessionID":"ses_sim"}

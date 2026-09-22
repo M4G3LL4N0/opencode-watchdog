@@ -1,0 +1,28 @@
+{"_expect":{"detect":true,"detector":"duplicate_sentence"}}
+{"_at":0,"kind":"sessionCreated","sessionID":"ses_sim","model":"big-pickle","provider":"opencode"}
+{"_at":0,"kind":"sessionBusy","sessionID":"ses_sim","model":"big-pickle","provider":"opencode"}
+{"_at":0,"kind":"assistantTextDelta","delta":"We fixed the parser contract and re-ran the whole suite. ","sessionID":"ses_sim","model":"big-pickle","provider":"opencode"}
+{"_at":100,"kind":"assistantTextDelta","delta":"We fixed the parser contract and re-ran the whole suite. ","sessionID":"ses_sim","model":"big-pickle","provider":"opencode"}
+{"_at":200,"kind":"assistantTextDelta","delta":"We fixed the parser contract and re-ran the whole suite. ","sessionID":"ses_sim","model":"big-pickle","provider":"opencode"}
+{"_at":300,"kind":"assistantTextDelta","delta":"We fixed the parser contract and re-ran the whole suite. ","sessionID":"ses_sim","model":"big-pickle","provider":"opencode"}
+{"_at":400,"kind":"assistantTextDelta","delta":"We fixed the parser contract and re-ran the whole suite. ","sessionID":"ses_sim","model":"big-pickle","provider":"opencode"}
+{"_at":500,"kind":"assistantTextDelta","delta":"We fixed the parser contract and re-ran the whole suite. ","sessionID":"ses_sim","model":"big-pickle","provider":"opencode"}
+{"_at":186000,"kind":"assistantTextDelta","delta":"We fixed the parser contract and re-ran the whole suite. ","sessionID":"ses_sim","model":"grok-4-beta","provider":"xai"}
+{"_at":186100,"kind":"assistantTextDelta","delta":"We fixed the parser contract and re-ran the whole suite. ","sessionID":"ses_sim","model":"grok-4-beta","provider":"xai"}
+{"_at":186200,"kind":"assistantTextDelta","delta":"We fixed the parser contract and re-ran the whole suite. ","sessionID":"ses_sim","model":"grok-4-beta","provider":"xai"}
+{"_at":186300,"kind":"assistantTextDelta","delta":"We fixed the parser contract and re-ran the whole suite. ","sessionID":"ses_sim","model":"grok-4-beta","provider":"xai"}
+{"_at":186400,"kind":"assistantTextDelta","delta":"We fixed the parser contract and re-ran the whole suite. ","sessionID":"ses_sim","model":"grok-4-beta","provider":"xai"}
+{"_at":186500,"kind":"assistantTextDelta","delta":"We fixed the parser contract and re-ran the whole suite. ","sessionID":"ses_sim","model":"grok-4-beta","provider":"xai"}
+{"_at":191000,"kind":"assistantTextDelta","delta":"We fixed the parser contract and re-ran the whole suite. ","sessionID":"ses_sim","model":"big-pickle","provider":"opencode"}
+{"_at":191100,"kind":"assistantTextDelta","delta":"We fixed the parser contract and re-ran the whole suite. ","sessionID":"ses_sim","model":"big-pickle","provider":"opencode"}
+{"_at":191200,"kind":"assistantTextDelta","delta":"We fixed the parser contract and re-ran the whole suite. ","sessionID":"ses_sim","model":"big-pickle","provider":"opencode"}
+{"_at":191300,"kind":"assistantTextDelta","delta":"We fixed the parser contract and re-ran the whole suite. ","sessionID":"ses_sim","model":"big-pickle","provider":"opencode"}
+{"_at":191400,"kind":"assistantTextDelta","delta":"We fixed the parser contract and re-ran the whole suite. ","sessionID":"ses_sim","model":"big-pickle","provider":"opencode"}
+{"_at":191500,"kind":"assistantTextDelta","delta":"We fixed the parser contract and re-ran the whole suite. ","sessionID":"ses_sim","model":"big-pickle","provider":"opencode"}
+{"_at":196000,"kind":"assistantTextDelta","delta":"We fixed the parser contract and re-ran the whole suite. ","sessionID":"ses_sim","model":"grok-4-beta","provider":"xai"}
+{"_at":196100,"kind":"assistantTextDelta","delta":"We fixed the parser contract and re-ran the whole suite. ","sessionID":"ses_sim","model":"grok-4-beta","provider":"xai"}
+{"_at":196200,"kind":"assistantTextDelta","delta":"We fixed the parser contract and re-ran the whole suite. ","sessionID":"ses_sim","model":"grok-4-beta","provider":"xai"}
+{"_at":196300,"kind":"assistantTextDelta","delta":"We fixed the parser contract and re-ran the whole suite. ","sessionID":"ses_sim","model":"grok-4-beta","provider":"xai"}
+{"_at":196400,"kind":"assistantTextDelta","delta":"We fixed the parser contract and re-ran the whole suite. ","sessionID":"ses_sim","model":"grok-4-beta","provider":"xai"}
+{"_at":196500,"kind":"assistantTextDelta","delta":"We fixed the parser contract and re-ran the whole suite. ","sessionID":"ses_sim","model":"grok-4-beta","provider":"xai"}
+{"_at":205000,"kind":"progressObserved","marker":"text.ended","sessionID":"ses_sim"}

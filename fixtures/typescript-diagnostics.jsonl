@@ -1,0 +1,19 @@
+{"_expect":{"detect":false}}
+{"_at":0,"kind":"sessionCreated","sessionID":"ses_sim"}
+{"_at":0,"kind":"sessionBusy","sessionID":"ses_sim"}
+{"_at":0,"kind":"toolCallStarted","callID":"call_tsc","tool":"bash","input":{"command":"tsc --noEmit --pretty false"},"sessionID":"ses_sim"}
+{"_at":100,"kind":"toolOutputObserved","callID":"call_tsc","tool":"bash","outcomeText":"src/file0.ts(10,2): error TS2300: Type 'string' is not assignable to type 'string[]'.","sessionID":"ses_sim"}
+{"_at":400,"kind":"toolOutputObserved","callID":"call_tsc","tool":"bash","outcomeText":"src/file1.ts(13,3): error TS2340: Type 'number' is not assignable to type 'Map<string,number>'.","sessionID":"ses_sim"}
+{"_at":700,"kind":"toolOutputObserved","callID":"call_tsc","tool":"bash","outcomeText":"src/file2.ts(16,4): error TS2380: Type 'boolean[]' is not assignable to type 'number'.","sessionID":"ses_sim"}
+{"_at":1000,"kind":"toolOutputObserved","callID":"call_tsc","tool":"bash","outcomeText":"src/file3.ts(19,5): error TS2420: Type 'Record<string,string>' is not assignable to type 'string'.","sessionID":"ses_sim"}
+{"_at":1300,"kind":"toolOutputObserved","callID":"call_tsc","tool":"bash","outcomeText":"src/file0.ts(22,6): error TS2460: Type 'string' is not assignable to type 'string[]'.","sessionID":"ses_sim"}
+{"_at":1600,"kind":"toolOutputObserved","callID":"call_tsc","tool":"bash","outcomeText":"src/file1.ts(25,7): error TS2500: Type 'number' is not assignable to type 'Map<string,number>'.","sessionID":"ses_sim"}
+{"_at":1900,"kind":"toolOutputObserved","callID":"call_tsc","tool":"bash","outcomeText":"src/file2.ts(28,8): error TS2540: Type 'boolean[]' is not assignable to type 'number'.","sessionID":"ses_sim"}
+{"_at":2200,"kind":"toolOutputObserved","callID":"call_tsc","tool":"bash","outcomeText":"src/file3.ts(31,9): error TS2580: Type 'Record<string,string>' is not assignable to type 'string'.","sessionID":"ses_sim"}
+{"_at":2500,"kind":"toolOutputObserved","callID":"call_tsc","tool":"bash","outcomeText":"src/file0.ts(34,10): error TS2620: Type 'string' is not assignable to type 'string[]'.","sessionID":"ses_sim"}
+{"_at":2800,"kind":"toolOutputObserved","callID":"call_tsc","tool":"bash","outcomeText":"src/file1.ts(37,11): error TS2660: Type 'number' is not assignable to type 'Map<string,number>'.","sessionID":"ses_sim"}
+{"_at":3600,"kind":"toolCallFinished","callID":"call_tsc","tool":"bash","outcome":"error","sessionID":"ses_sim"}
+{"_at":3700,"kind":"assistantTextDelta","delta":"Fixing the reported type errors now. ","sessionID":"ses_sim"}
+{"_at":4000,"kind":"assistantTextDelta","delta":"One issue in the serializer, another in the cache. ","sessionID":"ses_sim"}
+{"_at":4300,"kind":"fileChangeObserved","path":"src/serialize.ts","sessionID":"ses_sim"}
+{"_at":4400,"kind":"progressObserved","marker":"step.start","sessionID":"ses_sim"}
