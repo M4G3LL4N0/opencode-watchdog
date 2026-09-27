@@ -2,6 +2,8 @@
 
 A local circuit breaker for runaway OpenCode sessions.
 
+Public site: https://opencode-watchdog.vercel.app
+
 Built by Noaerth.
 
 OpenCode Watchdog is an independent community project by Noaerth. It is not affiliated with, endorsed by, or maintained by the OpenCode team.
@@ -20,7 +22,7 @@ OpenCode Watchdog notices the repetition and safely interrupts the affected sess
 
 ```bash
 # Install from GitHub (npm package planned)
-git clone https://github.com/noaerth/opencode-watchdog.git
+git clone https://github.com/M4G3LL4N0/opencode-watchdog.git
 cd opencode-watchdog
 pnpm install
 pnpm run build
