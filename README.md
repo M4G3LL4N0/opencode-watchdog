@@ -1,5 +1,9 @@
 # OpenCode Watchdog
 
+<p align="center">
+  <img src="assets/social-card.png" alt="OpenCode Watchdog" width="100%">
+</p>
+
 A local circuit breaker for runaway OpenCode sessions.
 
 Public site: https://opencode-watchdog.vercel.app
