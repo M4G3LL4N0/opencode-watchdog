@@ -3,3 +3,8 @@ dist/
 *.log
 .DS_Store
 .state/
+
+# local agent tooling (per-repo, not shared)
+.cursor/
+.opencode/
+CLAUDE.md
