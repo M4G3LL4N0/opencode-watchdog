@@ -1,12 +1,11 @@
-# This repository is its own pnpm workspace root.
+# Declares this directory as its own pnpm workspace root.
 #
-# /Users/matador/startups/pnpm-workspace.yaml (one level up) is an untracked
-# file that lists only grokbot-society and grokbot-society-website as
-# members. Without this file, pnpm walks up, finds that workspace, resolves
-# the PARENT lockfile, and installs nothing here. A fresh clone then fails
-# with "error TS2688: Cannot find type definition file for 'node'" because
-# node_modules/@types/node is never populated.
-#
-# `packages: []` means: this directory is a workspace root with no member
-# packages. The root package itself is still installed and built.
-packages: []
+# The parent directory /Users/matador/startups has a pnpm-workspace.yaml that
+# does not list opencode-watchdog as a member. pnpm would walk up, resolve the
+# parent lockfile, and install nothing here — typecheck then fails with
+# "Cannot find type definition file for 'node'". This file makes a fresh clone
+# of this repository self-contained.
+packages:
+  - "."
+
+allowBuilds: {}
