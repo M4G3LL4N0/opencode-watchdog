@@ -1,0 +1,12 @@
+# This repository is its own pnpm workspace root.
+#
+# /Users/matador/startups/pnpm-workspace.yaml (one level up) is an untracked
+# file that lists only grokbot-society and grokbot-society-website as
+# members. Without this file, pnpm walks up, finds that workspace, resolves
+# the PARENT lockfile, and installs nothing here. A fresh clone then fails
+# with "error TS2688: Cannot find type definition file for 'node'" because
+# node_modules/@types/node is never populated.
+#
+# `packages: []` means: this directory is a workspace root with no member
+# packages. The root package itself is still installed and built.
+packages: []
