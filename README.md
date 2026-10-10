@@ -1,241 +1,101 @@
-# OpenCode Watchdog
+# opencode-watchdog
 
-<p align="center">
-  <picture>
-    <source media="(prefers-reduced-motion: reduce)" srcset="assets/hero/hero-reduced.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/hero/hero-light.svg">
-    <img src="assets/hero/hero-motion.svg" alt="OpenCode Watchdog — animated project plate showing objective &rarr; plan &rarr; execute &rarr; verify. Motion depicts this project's real state transition." width="100%">
-  </picture>
-</p>
+> A local circuit breaker for runaway OpenCode sessions. Built in TypeScript. 1 entry point (index.ts). Live at opencode-watchdog.vercel.app.
 
-<p align="center">
-  <picture>
-    <source media="(prefers-reduced-motion: reduce)" srcset="assets/hero/computational-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/hero/computational-light.svg">
-    <img src="assets/hero/computational-motion.svg" alt="State machine: objective &rarr; plan &rarr; execute &rarr; verify." width="100%">
-  </picture>
-</p>
+The implementation summary below is intentionally conservative. Claims from NORTHSTAR are not presented as shipped functionality.
 
-<p align="center">
-  <img src="assets/social-card.png" alt="OpenCode Watchdog" width="100%">
-</p>
+- [GitHub repository](https://github.com/M4G3LL4N0/opencode-watchdog)
+- [Project site](https://opencode-watchdog.vercel.app)
 
-A local circuit breaker for runaway OpenCode sessions.
+<!-- NOAERTH_IMAGE_SLOT: opencode-watchdog/hero -->
 
-Public site: https://opencode-watchdog.vercel.app
+## What it is
 
-Built by Noaerth.
+A local circuit breaker for runaway OpenCode sessions. Built in TypeScript. 1 entry point (index.ts). Live at opencode-watchdog.vercel.app.
 
-OpenCode Watchdog is an independent community project by Noaerth. It is not affiliated with, endorsed by, or maintained by the OpenCode team.
+This repository is part of the NOAERTH venture ecosystem. The current public-facing evidence identifies it as a early-stage project rather than a production-ready system.
 
-## The problem
+## Capabilities
 
-Models occasionally enter runaway repetition:
+### Available evidence
 
-```
-递归递归递归递递归...
-```
+- The repository contains the implementation and documentation associated with the project description above.
+- The technology signals currently visible in the local project are listed in the technical notes below.
+- No additional capability is asserted here without a direct implementation reference.
 
-OpenCode Watchdog notices the repetition and safely interrupts the affected session.
+### Experimental or planned
 
-## 60-second quickstart
+Roadmap intent is deliberately not represented as shipped functionality. Review NORTHSTAR and source implementation together before adding future-facing claims.
 
-```bash
-# Install from GitHub (npm package planned)
-git clone https://github.com/M4G3LL4N0/opencode-watchdog.git
-cd opencode-watchdog
+<!-- NOAERTH_IMAGE_SLOT: opencode-watchdog/workflow -->
+
+## How it works
+
+The current evidence supports a repository-level application or tool workflow, but does not provide enough verified detail in the Part 1 record to publish a component-level architecture diagram. The architecture slot is reserved for a deterministic diagram after the source flow is reviewed.
+
+<!-- NOAERTH_IMAGE_SLOT: opencode-watchdog/architecture -->
+
+## Quick start
+
+### Prerequisites
+
+- A runtime suitable for `Node.js`.
+- A clean checkout of this repository.
+
+### Install
+
+```sh
 pnpm install
+```
+
+### Run locally
+
+```sh
+Use the repository's documented entry point after installing dependencies.
+```
+
+### Build
+
+```sh
 pnpm run build
-
-# Start the watchdog (adopts or spawns the OpenCode server)
-./bin/ocw.js start
-
-# Then connect your Desktop or CLI to the watchdog's OpenCode server
-# (see `ocw desktop` and `ocw cli` for details)
 ```
 
-## What it catches
+### Test
 
-- repeated-token generation
-- repeated sentence/narration loops
-- repeated tools with no progress
-- no-progress activity
-
-## What it does
-
-Normal:
-OpenCode → model → progress
-
-Broken:
-OpenCode → model degenerates → watchdog detects → affected session aborts → files remain
-
-## Modes
-
-- **Observe**: Log incidents, take no action (default, safe for evaluation)
-- **Protect**: Abort affected session on detection (recommended for protection)
-- **Recover**: Abort then send a recovery prompt (experimental, bounded)
-
-## Why it's safe
-
-- No model used for detection (purely local, deterministic)
-- Local-only execution (no network calls except to your OpenCode server)
-- Bounded buffers and per-session isolation
-- No Git reset/revert or filesystem rollback
-- Does not kill Desktop or unrelated sessions
-- Conservative false-positive strategy (requires corroboration)
-
-## Verification
-
-- **70/70 unit tests** passing
-- **22/22 simulate fixtures** passing (9 positive + 13 negative)
-- Build and typecheck: clean (strict TypeScript)
-- Live smoke tested against real `opencode serve` 1.18.30 (adopt/spawn/stop/refusal, status/doctor/sessions/mode/incidents)
-
-## Architecture
-
-```
-Desktop / CLI
-    ↓ (SSE feed)
-OpenCode Server
-    ↓
-Watchdog Observer
-    ↓
-Detector Pipeline (short_pattern, duplicate_sentence, etc.)
-    ↓
-Policy Engine (corroboration threshold)
-    ↓
-Session Abort (POST /session/{id}/abort) or Recovery Prompt
+```sh
+pnpm run test
 ```
 
-## Advanced usage
+Commands are included only when they were detected in the repository manifest; verify environment-specific requirements before deployment.
 
-See `ocw --help` for the full command list:
+## Technical notes
 
-```
-ocw start [--mode observe|protect|recover]   Start (or adopt) the shared OpenCode server and watch all sessions
-ocw desktop [--mode ...]                     Same as start, then print Desktop connection instructions
-ocw cli                                      Connect your terminal CLI to the running shared server
-ocw run [args...]                            Pass-through to 'opencode run' attached to the shared server
-ocw watch                                    Watch an already-running OpenCode server (no server management)
-ocw stop                                     Stop a server this watchdog started (never external servers)
-ocw status                                    Show watchdog + server + per-session circuit state
-ocw doctor                                    Run capability probes and report health
-ocw incidents [--json]                       Show the incident log
-ocw incidents mark <id> false-positive       Tag an incident as a false positive
-ocw stats                                    Report session + incident summary
-ocw sessions [--json]                        List server sessions with circuit state
-ocw mode [observe|protect|recover]           Show or set the action mode (observe-first onboarding)
-ocw session reset <sessionID>                Reset watchdog state for a session (breaker + recovery + detectors)
-ocw config                                    Show effective configuration
-ocw config set <key> <value>                 Persist a configuration value
-ocw simulate [fixture...] [--mode M] [--pace MS]  Run fixture scenarios through the detector engine
-ocw install [--prefix DIR]                   Symlink the ocw launcher into a bin dir (~/.local/bin)
-```
+- **Primary language:** JavaScript/TypeScript
+- **Runtime:** Node.js
+- **Package manager:** pnpm
+- **Framework and integration signals:** Go, Rust
+- **Entry-point signals:** package.json
+- **Test evidence:** No test evidence recorded in the inventory
+- **Repository topics:** `typescript`, `agent-graph`, `bin`, `dung30n5`, `live`, `noaerth`, `policy`, `scripts`
 
-## Privacy
+## Status and roadmap
 
-- All processing is local to your machine.
-- Credentials (if set) are read from environment and never logged.
-- No data is sent to external services.
+**Current status:** Early-stage project.
 
-## Contributing
+**Current:** The repository and its documented implementation are available for inspection.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+**Next:** Reconcile the README, source behavior, and safe public product language before adding deeper examples or diagrams.
 
-## License
+**Future:** Product direction is maintained separately and must not be read as a shipped feature list.
 
-[MIT](LICENSE) © 2026 Noaerth
+## Contributing and license
 
-Built by Noaerth.
+Follow the repository's existing contribution and licensing files where present. This README does not invent an open-source license or contribution policy.
 
-<!-- TRILLIONX:presentation:begin -->
+## Visual documentation
 
-### Animated surfaces
+Image slots are intentionally comments until authentic screenshots, deterministic diagrams, or approved conceptual visuals exist. No absent image file is referenced.
 
-Generated from this repository's own source tree: every count, route and module below was measured, not written by hand.
+## NOAERTH
 
-#### Identity
-
-<picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/M4G3LL4N0/opencode-watchdog/main/.github-art/surfaces/hero-reduced.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/M4G3LL4N0/opencode-watchdog/main/.github-art/surfaces/hero-light.svg">
-  <img alt="Identity diagram for opencode-watchdog" src="https://raw.githubusercontent.com/M4G3LL4N0/opencode-watchdog/main/.github-art/surfaces/hero-motion.svg">
-</picture>
-
-#### Entry points
-
-<picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/M4G3LL4N0/opencode-watchdog/main/.github-art/surfaces/terminal-reduced.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/M4G3LL4N0/opencode-watchdog/main/.github-art/surfaces/terminal-light.svg">
-  <img alt="Entry points diagram for opencode-watchdog" src="https://raw.githubusercontent.com/M4G3LL4N0/opencode-watchdog/main/.github-art/surfaces/terminal-motion.svg">
-</picture>
-
-#### Modules
-
-<picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/M4G3LL4N0/opencode-watchdog/main/.github-art/surfaces/architecture-reduced.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/M4G3LL4N0/opencode-watchdog/main/.github-art/surfaces/architecture-light.svg">
-  <img alt="Modules diagram for opencode-watchdog" src="https://raw.githubusercontent.com/M4G3LL4N0/opencode-watchdog/main/.github-art/surfaces/architecture-motion.svg">
-</picture>
-
-#### Primitives
-
-<picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/M4G3LL4N0/opencode-watchdog/main/.github-art/surfaces/state_machine-reduced.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/M4G3LL4N0/opencode-watchdog/main/.github-art/surfaces/state_machine-light.svg">
-  <img alt="Primitives diagram for opencode-watchdog" src="https://raw.githubusercontent.com/M4G3LL4N0/opencode-watchdog/main/.github-art/surfaces/state_machine-motion.svg">
-</picture>
-
-#### Build and tests
-
-<picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/M4G3LL4N0/opencode-watchdog/main/.github-art/surfaces/build-reduced.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/M4G3LL4N0/opencode-watchdog/main/.github-art/surfaces/build-light.svg">
-  <img alt="Build and tests diagram for opencode-watchdog" src="https://raw.githubusercontent.com/M4G3LL4N0/opencode-watchdog/main/.github-art/surfaces/build-motion.svg">
-</picture>
-
-#### Workflow
-
-<picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/M4G3LL4N0/opencode-watchdog/main/.github-art/surfaces/workflow-reduced.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/M4G3LL4N0/opencode-watchdog/main/.github-art/surfaces/workflow-light.svg">
-  <img alt="Workflow diagram for opencode-watchdog" src="https://raw.githubusercontent.com/M4G3LL4N0/opencode-watchdog/main/.github-art/surfaces/workflow-motion.svg">
-</picture>
-
-#### Domain
-
-<picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/M4G3LL4N0/opencode-watchdog/main/.github-art/surfaces/domain-reduced.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/M4G3LL4N0/opencode-watchdog/main/.github-art/surfaces/domain-light.svg">
-  <img alt="Domain diagram for opencode-watchdog" src="https://raw.githubusercontent.com/M4G3LL4N0/opencode-watchdog/main/.github-art/surfaces/domain-motion.svg">
-</picture>
-
-#### Identity object
-
-<picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/M4G3LL4N0/opencode-watchdog/main/.github-art/surfaces/footer-reduced.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/M4G3LL4N0/opencode-watchdog/main/.github-art/surfaces/footer-light.svg">
-  <img alt="Identity object diagram for opencode-watchdog" src="https://raw.githubusercontent.com/M4G3LL4N0/opencode-watchdog/main/.github-art/surfaces/footer-motion.svg">
-</picture>
-
-<!-- TRILLIONX:presentation:end -->
-
-<!-- TRILLIONX:evidence:begin -->
-
-## What is measurable here
-
-Generated by `.github-art` from the source tree at publish time.
-
-| Signal | Value |
-| --- | --- |
-| HTTP routes | 0 |
-| Entry points | 1 |
-| Module roots | 3 |
-| Test files | 12 |
-| CI workflows | 1 |
-| Distinctive stack | scaffold only |
-| Status | LIVE |
-| Evidence confidence | E3 |
-| Animated surfaces | 8 |
-
-<!-- TRILLIONX:evidence:end -->
+[NOAERTH](https://www.noaerth.com) is the venture ecosystem associated with this project.
